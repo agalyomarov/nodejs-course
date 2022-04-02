@@ -14,7 +14,7 @@ router.get("/", async(req, res) => {
         res.render("courses", {
             title: "Курсы",
             isCourses: true,
-            userId: null,
+            userId: req.user._id ? req.user._id.toString() : null,
             courses: courses,
         });
     } catch (err) {
